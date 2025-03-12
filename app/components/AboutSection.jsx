@@ -1,7 +1,81 @@
 
+
 "use client"
 import React, {useTransition, useState} from 'react'
 import Image from 'next/image'
+
+const CertificateViewer = () => {
+    const [selectedCertificate, setSelectedCertificate] = useState(null);
+    
+    const certificates = [
+        {
+            id: 1,
+            title: "Web Development - InternsElite",
+            imagePath: "images/webDev.jpeg", // Update with your image path
+        },
+        {
+            id: 2,
+            title: "Full Stack Development using MERN - Ardent",
+            imagePath: "images/ardent.jpg", // Update with your image path
+        }
+    ];
+    
+    const openCertificate = (certificate) => {
+        setSelectedCertificate(certificate);
+    };
+    
+    const closeCertificate = () => {
+        setSelectedCertificate(null);
+    };
+    
+    return (
+        <>
+            {/* Certificate Cards */}
+            {certificates.map((certificate) => (
+                <div key={certificate.id} className="p-4 border rounded-lg shadow-md bg-white flex justify-between items-center">
+                    <div>
+                        <h3 className="text-lg font-semibold text-gray-800">
+                            {certificate.title}
+                        </h3>
+                    </div>
+                    <button 
+                        onClick={() => openCertificate(certificate)}
+                        className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition"
+                    >
+                        View Certificate
+                    </button>
+                </div>
+            ))}
+            
+            {/* Certificate Modal */}
+            {selectedCertificate && (
+                <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" onClick={closeCertificate}>
+                    <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
+                        {/* Close button - Updated with more visible styling */}
+                        <button 
+                            className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg z-10 hover:bg-gray-200 transition-colors"
+                            onClick={closeCertificate}
+                            aria-label="Close certificate"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        
+                        {/* Certificate image */}
+                        <div className="bg-white p-2 rounded-lg shadow-lg">
+                            <img 
+                                src={selectedCertificate.imagePath} 
+                                alt={`${selectedCertificate.title} Certificate`} 
+                                className="w-full h-auto object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
+    );
+};
 
 const Tab_Data = [
     {
@@ -43,6 +117,9 @@ const Tab_Data = [
                     </span>
                     <span className="px-3 py-1 bg-red-100 text-teal-700 rounded-md text-sm font-medium">
                         Github
+                    </span>
+                    <span className="px-3 py-1 bg-red-100 text-red-700 rounded-md text-sm font-medium">
+                        Docker
                     </span>
                 </div>
             </div>
@@ -88,39 +165,7 @@ const Tab_Data = [
         id: "certifications",
         content: (
             <div className="space-y-4">
-                {/* Web Development Certificate */}
-                <div className="p-4 border rounded-lg shadow-md bg-white flex justify-between items-center">
-                    <div>
-                        <h3 className="text-lg font-semibold text-gray-800">
-                            Web Development - Internsillite
-                        </h3>
-                    </div>
-                    <a 
-                        href="https://your-certificate-link.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition"
-                    >
-                        View Certificate
-                    </a>
-                </div>
-
-                {/* Full Stack Certificate */}
-                <div className="p-4 border rounded-lg shadow-md bg-white flex justify-between items-center">
-                    <div>
-                        <h3 className="text-lg font-semibold text-gray-800">
-                            Full Stack Development (MERN) - Ardent
-                        </h3>
-                    </div>
-                    <a 
-                        href="https://your-certificate-link.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition"
-                    >
-                        View Certificate
-                    </a>
-                </div>
+                <CertificateViewer />
             </div>
         )
     }
@@ -148,7 +193,7 @@ const AboutSection = () => {
                 <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
                     <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
                     <p className='text-base lg:text-lg'>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, earum, illo voluptatibus iusto minima libero et possimus fuga laboriosam aspernatur dicta ratione accusamus corporis vero molestiae quam autem expedita! Tempora!
+                    I am a final-year B.Tech student and a passionate Full stack developer with experience in building scalable web applications. As a fresher, I have developed 8 projects, including minor and major. I am seeking an opportunity to apply my skills and grow professionally.
                     </p>
 
                     {/* Tabs Section */}

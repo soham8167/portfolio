@@ -14,17 +14,15 @@ const HeroSection = () => {
       <div className='grid grid-cols-1 lg:grid-cols-12'>
       <div className='col-span-7 place-self-center'>
       <h1 className='text-white mb-4 text-4xl font-bold'>
-        <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Hello I am{""} </span>
+        <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Hello I am Soham{""} </span>
     <br></br>
         <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
-        'Web Developer',
-        1000, // wait 1s before replacing "Mice" with "Hamsters"
-        'UI/UX Designer',
-        1000,
-        'Mobile Developer',
-        1000,
+        
+        'Frontend Developer',
+        1000, 
+        'Backend Developer',
+        1000
         
       ]}
       wrapper="span"
@@ -33,11 +31,11 @@ const HeroSection = () => {
     />
   
         </h1>
-    <p className='text-lg lg:text-xl'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At nihil voluptate architecto provident sapiente. Id temporibus aspernatur, qui quos, accusantium commodi totam sunt consequuntur quam.</p>
-    <div>
+    <p className='text-lg lg:text-xl'>Passionate Full Stack Developer | Final Year B.Tech Student | Aspiring Full-Stack Engineer | Proficient in MongoDB, Express, React, and Node.js | Seeking Opportunities to Apply My Skills | Dedicated to Building Scalable & Efficient Web Applications | Eager to Learn & Grow in a Dynamic Tech Environment.</p>
+    {/* <div>
         <button className='px-6 py-3 rounded-full bg-gradient-to-br from-blue-200 via-purple-300 to-pink-300  mr-4 bg-white  text-black'>Hire me</button>
         <button className='px-6 py-3 rounded-full bg-gradient-to-br from-blue-200 via-purple-300 to-pink-300  text-black border border-white mt-4 '>Download CV</button>
-    </div>
+    </div> */}
       </div>
       <div className='col-span-5 flex justify-center items-center p-5'>
         
