@@ -13,7 +13,7 @@ const projectsData = [
     },
     {
         id:2,
-        title: "MeetUp",
+        title: "Stdudent id card generator",
         description: "React Js | Node Js | Express Js | Css ",
         image: "images/qrcode.png",
         gitUrl:"https://github.com/soham8167/qr-code",
