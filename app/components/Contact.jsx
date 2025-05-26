@@ -53,7 +53,7 @@ const Contact = () => {
   };
   
   return (
-    <div className="min-h-screen bg-[#121212] py-12 px-4 sm:px-6 lg:px-8" id="contact">
+    <div className="min-h-screen bg-[#121212] py-12 px-4 sm:px-6 lg:px-8" id="contact overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">

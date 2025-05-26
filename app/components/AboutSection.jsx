@@ -32,7 +32,7 @@ const CertificateViewer = () => {
         <>
             {/* Certificate Cards */}
             {certificates.map((certificate) => (
-                <div key={certificate.id} className="p-4 border rounded-lg shadow-md bg-white flex justify-between items-center">
+                <div key={certificate.id} className="p-4 border rounded-lg shadow-md bg-white flex justify-between items-center overflow-hidden">
                     <div>
                         <h3 className="text-lg font-semibold text-gray-800">
                             {certificate.title}

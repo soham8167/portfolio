@@ -3,7 +3,7 @@ import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 const ProjectCard = ({imgUrl, title, description, gitUrl, viewUrl}) => {
   return (
-    <div>
+    <div >
         <div 
         className='h-52 md:h-72 rounded-t-xl relative group'
         style={{background: `url(${imgUrl})`, backgroundSize: "cover"}}
